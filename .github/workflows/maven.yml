@@ -1,0 +1,62 @@
+name: Java maven CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile:
+    name: Compile project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Set up jdk 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Compile files
+        run: mvn compile
+
+  test:
+    name: Test implementation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Set up jdk 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Test classes
+        run: mvn clean test
+
+  package:
+    name: Build jar file
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: Set up jdk 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Create jar file
+        env:
+          JAR-NAME: recap-java-algorithms-1.0-SNAPSHOT-${{ github.sha }}
+        run: mvn -B package --file pom.xml && mv ./target/recap-java-algorithms-1.0-SNAPSHOT.jar ./target/$JAR-NAME.jar
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: recap-java-algorithms-1.0-SNAPSHOT
+          path: ./target
