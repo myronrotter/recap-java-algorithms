@@ -37,6 +37,43 @@ public class MathUtils {
   }
 
   /**
+   * Find the index of the maximum of the array.
+   *
+   * @param <T> Type must support comparison via the Comparable interface.
+   * @param arr Array to find maximum.
+   * @return Maximum of the array.
+   */
+  public static <T extends Comparable<T>> int findMaxIndex(T[] arr) {
+    if (arr.length == 0 || arr == null) {
+      throw new IllegalArgumentException("Array null or empty.");
+    }
+    return findMaxIndexInRange(arr, arr.length);
+  }
+
+  /**
+   * Find the index of the maximum in range @param n of the array.
+   *
+   * @param <T> Type must support comparison via the Comparable interface.
+   * @param arr Array to find maximum.
+   * @param n   Range to find the maxium.
+   * @return Index of the maximum in range @param n of the array.
+   */
+  public static <T extends Comparable<T>> int findMaxIndexInRange(T[] arr, int n) {
+    if (arr.length == 0 || arr == null) {
+      throw new IllegalArgumentException("Array null or empty.");
+    }
+
+    int index = 0;
+    for (int i = 0; i < n; i++) {
+      if (CompareUtils.greaterThan(arr[i], arr[index])) {
+        index = i;
+      }
+    }
+
+    return index;
+  }
+
+  /**
    * Absolute value of x.
    *
    * @param x Integer.
