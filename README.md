@@ -30,10 +30,11 @@ Main purpose of this project is to recap and re-implement common-used and well-k
 
 ## Searching
 
-| class | name         | best-case   | average-case     | worst-case  |
-| ----- | ------------ | ----------- | ---------------- | ----------- |
-|       | LinearSearch | $\Omega(1)$ | $\Theta(n)$      | $O(n)$      |
-|       | BinarySearch | $\Omega(1)$ | $\Theta(log(n))$ | $O(log(n))$ |
+| class | name         | best-case   | average-case       | worst-case    |
+| ----- | ------------ | ----------- | ------------------ | ------------- |
+|       | LinearSearch | $\Omega(1)$ | $\Theta(n)$        | $O(n)$        |
+|       | BinarySearch | $\Omega(1)$ | $\Theta(log(n))$   | $O(log(n))$   |
+|       | JumpSearch   | $\Omega(1)$ | $\Theta(\sqrt{n})$ | $O(\sqrt{n})$ |
 
 [^1]: Strictly, depends on gap sequence/ size.
 [^2]: Denoted is the delay within the network of $O(n * log^2(n))$ comparators.
