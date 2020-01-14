@@ -1,24 +1,21 @@
 package com.algorithms.searching;
 
+import java.util.Arrays;
+
+import com.algorithms.interfaces.Searching;
 import com.algorithms.utils.CompareUtils;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Searching algorithm: JumpSearch.
  */
-public class JumpSearch {
+public class JumpSearch implements Searching {
 
-  /**
-   * Searching an element within an array via JumpSearch.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be searched.
-   * @param key The key to be searched for.
-   * @return Index of key in array or -1.
-   */
+  @Override
   public <T extends Comparable<T>> int search(T[] arr, T key) {
     if (!SortingUtils.isSorted(arr)) {
-      throw new IllegalArgumentException("Input array is not sorted.");
+      // throw new IllegalArgumentException("Input array is not sorted.");
+      Arrays.sort(arr);
     }
 
     // Define jump size

@@ -1,24 +1,21 @@
 package com.algorithms.searching;
 
+import java.util.Arrays;
+
+import com.algorithms.interfaces.Searching;
 import com.algorithms.utils.CompareUtils;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Searching algorithm: BinarySearch.
  */
-public class BinarySearch {
+public class BinarySearch implements Searching {
 
-  /**
-   * Searching an element within an array via BinarySearch.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be searched.
-   * @param key The key to be searched for.
-   * @return Index of key in array or -1.
-   */
+  @Override
   public <T extends Comparable<T>> int search(T[] arr, T key) {
     if (!SortingUtils.isSorted(arr)) {
-      throw new IllegalArgumentException("Input array is not sorted.");
+      // throw new IllegalArgumentException("Input array is not sorted.");
+      Arrays.sort(arr);
     }
 
     return this.find(arr, key, 0, arr.length - 1);
@@ -28,7 +25,7 @@ public class BinarySearch {
    * Function for recursive implementation of BinarySearch.
    *
    * @param <T>   Type must support comparison via the Comparable interface.
-   * @param arr   Array to be searched.
+   * @param arr   The array to be searched.
    * @param key   The key to be searched for.
    * @param left  Index of lower boundary.
    * @param right Index of upper boundary.
