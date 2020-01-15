@@ -83,4 +83,13 @@ public class MathUtils {
     return x < 0 ? -x : x;
   }
 
+  /**
+   * Checks whether the input { @param n } is a power of two.
+   *
+   * @param n Integer input.
+   * @return True iff { @param n } is a power of two.
+   */
+  public static boolean isPowerOfTwo(int n) {
+    return ((n & (n - 1)) == 0);
+  }
 }
