@@ -1,20 +1,15 @@
 package com.algorithms.sorting;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.MathUtils;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Sorting algorithm: PancakeSort.
  */
-public class PancakeSort {
+public class PancakeSort implements Sorting {
 
-  /**
-   * Sorting array via PancakeSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     for (int i = arr.length - 1; i > 0; i--) {
       int maxIndex = MathUtils.findMaxIndexInRange(arr, i + 1);

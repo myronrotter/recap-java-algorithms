@@ -1,19 +1,14 @@
 package com.algorithms.sorting;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.CompareUtils;
 
 /**
  * Sorting algorithm: MergeSort. Uses divide and conquer.
  */
-public class MergeSort {
+public class MergeSort implements Sorting {
 
-  /**
-   * Sorting array via MergeSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     this.divide(arr, 0, arr.length - 1);
     return arr;

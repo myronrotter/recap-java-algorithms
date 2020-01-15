@@ -2,22 +2,17 @@ package com.algorithms.sorting;
 
 import java.util.Random;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Sorting algorithm: BogoSort.
  */
-public class BogoSort {
+public class BogoSort implements Sorting {
 
   private static final Random random = new Random();
 
-  /**
-   * Sorting array via BogoSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     while (!SortingUtils.isSorted(arr)) {
       // Shuffle array randomly

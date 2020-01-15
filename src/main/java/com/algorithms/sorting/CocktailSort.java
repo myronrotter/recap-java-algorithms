@@ -1,5 +1,6 @@
 package com.algorithms.sorting;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.CompareUtils;
 import com.algorithms.utils.SortingUtils;
 
@@ -7,15 +8,9 @@ import com.algorithms.utils.SortingUtils;
  * Sorting algorithm: CocktailSort. Improves BubbleSort by solving the - turtle
  * - problem. Nevertheless it does not improve asymptotic performance.
  */
-public class CocktailSort {
+public class CocktailSort implements Sorting {
 
-  /**
-   * Sorting array via CocktailSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     // Initialize swapped, if swapped false after forward and backward iteration,
     // array is sorted

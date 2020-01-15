@@ -1,24 +1,19 @@
 package com.algorithms.sorting;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.CompareUtils;
+import com.algorithms.utils.MathUtils;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Sorting algorithm: BitonicSort. Algorithm for parallel sorting.
  */
-public class BitonicSort {
+public class BitonicSort implements Sorting {
 
-  /**
-   * Sorting array via BitonicSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     // Length of array must be a power of 2
-    boolean isPowerOfTwo = ((arr.length & (arr.length - 1)) == 0);
-    if (!isPowerOfTwo) {
+    if (!MathUtils.isPowerOfTwo(arr.length)) {
       throw new IllegalArgumentException("Length of input array is not a power of two.");
     }
 

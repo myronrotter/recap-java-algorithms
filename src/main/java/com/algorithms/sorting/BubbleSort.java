@@ -1,20 +1,15 @@
 package com.algorithms.sorting;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.CompareUtils;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Sorting algorithm: BubbleSort.
  */
-public class BubbleSort {
+public class BubbleSort implements Sorting {
 
-  /**
-   * Sorting array via BubbleSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     for (int i = 0; i < arr.length; i++) {
       for (int j = 0; j < arr.length - i - 1; j++) {

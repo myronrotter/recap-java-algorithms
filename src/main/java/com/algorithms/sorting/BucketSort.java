@@ -7,18 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.algorithms.interfaces.Sorting;
+
 /**
  * Sorting algorithm: BucketSort.
  */
-public class BucketSort {
+public class BucketSort implements Sorting {
 
-  /**
-   * Sorting array via BucketSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     TreeMap<Byte, ArrayList<T>> buckets = new TreeMap<>();
     List<T> sortedList = new ArrayList<>();

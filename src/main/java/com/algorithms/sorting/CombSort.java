@@ -1,5 +1,6 @@
 package com.algorithms.sorting;
 
+import com.algorithms.interfaces.Sorting;
 import com.algorithms.utils.CompareUtils;
 import com.algorithms.utils.SortingUtils;
 
@@ -8,15 +9,9 @@ import com.algorithms.utils.SortingUtils;
  * (relative small values at the end of the array). Ignoring - rabbits -
  * (relative large values at the end of the array).
  */
-public class CombSort {
+public class CombSort implements Sorting {
 
-  /**
-   * Sorting array via CombSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     // Initialize gap with array size
     int gap = arr.length;

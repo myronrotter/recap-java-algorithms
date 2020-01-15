@@ -3,18 +3,14 @@ package com.algorithms.sorting;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.algorithms.interfaces.Sorting;
+
 /**
  * Sorting algorithm: CountingSort.
  */
-public class CountingSort {
+public class CountingSort implements Sorting {
 
-  /**
-   * Sorting array via CountingSort algorithm.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be sorted.
-   * @return Sorted array.
-   */
+  @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
     Map<T, Integer> count = new TreeMap<>();
 
