@@ -1,21 +1,15 @@
 package com.algorithms.searching;
 
+import com.algorithms.interfaces.Searching;
 import com.algorithms.utils.CompareUtils;
 import com.algorithms.utils.SortingUtils;
 
 /**
  * Searching algorithm: BinarySearch.
  */
-public class BinarySearch {
+public class BinarySearch implements Searching {
 
-  /**
-   * Searching an element within an array via BinarySearch.
-   *
-   * @param <T> Type must support comparison via the Comparable interface.
-   * @param arr Array to be searched.
-   * @param key The key to be searched for.
-   * @return Index of key in array or -1.
-   */
+  @Override
   public <T extends Comparable<T>> int search(T[] arr, T key) {
     if (!SortingUtils.isSorted(arr)) {
       throw new IllegalArgumentException("Input array is not sorted.");
