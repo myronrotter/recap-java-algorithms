@@ -5,26 +5,23 @@ import com.algorithms.interfaces.Searching;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class LinearSearchTest implements SearchingTest<Searching> {
+public interface SearchingTest<T extends Searching> {
 
-  @Override
-  public Searching createInstance() {
-    return new LinearSearch();
-  }
+  T createInstance();
 
   @Test
-  public void testUnsortedInputFoundKey() {
+  public default void testSortedInputFoundKey() {
     int key = 7;
-    Integer[] arr = new Integer[] { 9, 6, 2, 3, 0, 4, 5, 1, 7, 8 };
-    int expected = 8;
+    Integer[] arr = new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    int expected = 7;
 
     Assertions.assertEquals(expected, this.createInstance().search(arr, key));
   }
 
   @Test
-  public void testUnsortedInputNotFoundKey() {
+  public default void testSortedInputNotFoundKey() {
     int key = 10;
-    Integer[] arr = new Integer[] { 9, 6, 2, 3, 0, 4, 5, 1, 7, 8 };
+    Integer[] arr = new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     int expected = -1;
 
     Assertions.assertEquals(expected, this.createInstance().search(arr, key));
