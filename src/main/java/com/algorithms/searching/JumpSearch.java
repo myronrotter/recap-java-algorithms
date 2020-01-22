@@ -38,4 +38,9 @@ public class JumpSearch implements Searching {
 
     return -1;
   }
+
+  @Override
+  public int find(Integer[] arr, Integer key) {
+    return this.search(arr, key);
+  }
 }

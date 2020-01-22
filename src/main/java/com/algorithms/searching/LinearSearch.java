@@ -19,4 +19,9 @@ public class LinearSearch implements Searching {
     }
     return index;
   }
+
+  @Override
+  public int find(Integer[] arr, Integer key) {
+    return this.search(arr, key);
+  }
 }
