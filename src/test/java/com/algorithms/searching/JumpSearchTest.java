@@ -21,4 +21,13 @@ class JumpSearchTest implements SearchingTest<Searching> {
       this.createInstance().search(arr, key);
     });
   }
+
+  @Test
+  public void testSearchOnSortedDuplicateIntegerInputFoundKey() {
+    Integer key = 1;
+    Integer[] arr = new Integer[] { 0, 0, 0, 0, 1, 1, 1, 1 };
+    int expected = 4;
+
+    Assertions.assertEquals(expected, this.createInstance().search(arr, key));
+  }
 }
