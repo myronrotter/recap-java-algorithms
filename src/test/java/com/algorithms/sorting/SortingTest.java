@@ -64,4 +64,12 @@ public interface SortingTest<T extends Sorting> {
 
     Assertions.assertArrayEquals(expected, this.createInstance().sort(arr));
   }
+
+  @Test
+  public default void testDuplicateStrings() {
+    String[] arr = new String[] { "aaaa", "aaaaa", "aaaa", "aaaaa", "aaaaa", "aaaa", "aaaaa", "aaaa" };
+    String[] expected = new String[] { "aaaa", "aaaa", "aaaa", "aaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa" };
+
+    Assertions.assertArrayEquals(expected, this.createInstance().sort(arr));
+  }
 }
