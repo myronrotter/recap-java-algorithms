@@ -21,9 +21,7 @@ public class InterpolationSearch implements Finding {
 
     // While key is in range of boundaries
     while (key >= arr[left] && key <= arr[right]) {
-      // Calculate potential index
-      // links + (int)(((double)rechts - links) * (schluessel - daten[links]) /
-      // versch);
+      // Interpolate index
       index = left + (int) ((right - left) * ((double) (key - arr[left]) / (arr[right] - arr[left])));
 
       if (key == arr[index]) {
