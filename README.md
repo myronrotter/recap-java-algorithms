@@ -28,6 +28,7 @@ Main purpose of this project is to recap and re-implement common-used and well-k
 | ------------------- | ----------------------------- | ----------- | ------------------------- | ------------- |
 | generic (Searching) | LinearSearch                  | $\Omega(1)$ | $\Theta(n)$               | $O(n)$        |
 |                     | BinarySearch                  | $\Omega(1)$ | $\Theta(log(n))$          | $O(log(n))$   |
+|                     | TernarySearch                 | $\Omega(1)$ | $\Theta(log_3(n))$        | $O(log_3(n))$ |
 |                     | JumpSearch                    | $\Omega(1)$ | $\Theta(\sqrt{n})$        | $O(\sqrt{n})$ |
 | integer (Finding)   | InterpolationSearch           | $\Omega(1)$ | $\Theta(log(log(n)))$[^3] | $O(n)$        |
 |                     | InterpolationSequentialSearch |             |                           |               |
