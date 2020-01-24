@@ -1,6 +1,7 @@
 package com.algorithms.searching;
 
 import com.algorithms.interfaces.Searching;
+import com.algorithms.interfaces.SearchingTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

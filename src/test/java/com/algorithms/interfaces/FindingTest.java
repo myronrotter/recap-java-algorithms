@@ -1,6 +1,4 @@
-package com.algorithms.searching;
-
-import com.algorithms.interfaces.Finding;
+package com.algorithms.interfaces;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,6 +6,24 @@ import org.junit.jupiter.api.Test;
 public interface FindingTest<T extends Finding> {
 
   T createInstance();
+
+  @Test
+  public default void testFindOnInputNull() {
+    Integer key = 7;
+    Integer[] arr = null;
+    int expected = -1;
+
+    Assertions.assertEquals(expected, this.createInstance().find(arr, key));
+  }
+
+  @Test
+  public default void testFindOnInputSizeZero() {
+    Integer key = 7;
+    Integer[] arr = new Integer[] {};
+    int expected = -1;
+
+    Assertions.assertEquals(expected, this.createInstance().find(arr, key));
+  }
 
   @Test
   public default void testFindOnSortedIntegerInputFoundKey() {
