@@ -16,6 +16,10 @@ public class BucketSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     TreeMap<Byte, ArrayList<T>> buckets = new TreeMap<>();
     List<T> sortedList = new ArrayList<>();
 

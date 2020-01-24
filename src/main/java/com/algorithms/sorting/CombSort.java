@@ -13,6 +13,10 @@ public class CombSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     // Initialize gap with array size
     int gap = arr.length;
     // Standard shrik factor is 1.3

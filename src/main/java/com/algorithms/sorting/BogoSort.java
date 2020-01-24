@@ -14,6 +14,10 @@ public class BogoSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     while (!SortingUtils.isSorted(arr)) {
       // Shuffle array randomly
       for (int i = 0; i < arr.length; i++) {

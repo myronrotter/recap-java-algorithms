@@ -10,6 +10,10 @@ public class MergeSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     this.divide(arr, 0, arr.length - 1);
     return arr;
   }

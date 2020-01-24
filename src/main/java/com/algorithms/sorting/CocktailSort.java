@@ -12,6 +12,10 @@ public class CocktailSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     // Initialize swapped, if swapped false after forward and backward iteration,
     // array is sorted
     boolean swapped = true;

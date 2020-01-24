@@ -11,6 +11,10 @@ public class BubbleSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     for (int i = 0; i < arr.length; i++) {
       for (int j = 0; j < arr.length - i - 1; j++) {
         if (CompareUtils.greaterThan(arr[j], arr[j + 1])) {

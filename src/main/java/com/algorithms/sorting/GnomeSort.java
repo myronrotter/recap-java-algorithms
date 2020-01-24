@@ -11,6 +11,10 @@ public class GnomeSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     int i = 1;
 
     while (i < arr.length) {

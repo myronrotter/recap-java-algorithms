@@ -12,6 +12,10 @@ public class CountingSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     Map<T, Integer> count = new TreeMap<>();
 
     // Calculating frequency of unique elements in arr

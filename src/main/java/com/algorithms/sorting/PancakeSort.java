@@ -11,6 +11,10 @@ public class PancakeSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    }
+
     for (int i = arr.length - 1; i > 0; i--) {
       int maxIndex = MathUtils.findMaxIndexInRange(arr, i + 1);
 

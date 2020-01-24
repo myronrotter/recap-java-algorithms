@@ -12,8 +12,10 @@ public class BitonicSort implements Sorting {
 
   @Override
   public <T extends Comparable<T>> T[] sort(T[] arr) {
-    // Length of array must be a power of 2
-    if (!MathUtils.isPowerOfTwo(arr.length)) {
+    if (arr == null || arr.length == 0) {
+      return arr;
+    } else if (!MathUtils.isPowerOfTwo(arr.length)) {
+      // Length of array must be a power of 2
       throw new IllegalArgumentException("Length of input array is not a power of two.");
     }
 
