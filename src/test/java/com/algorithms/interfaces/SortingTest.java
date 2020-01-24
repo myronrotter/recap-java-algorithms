@@ -1,6 +1,4 @@
-package com.algorithms.sorting;
-
-import com.algorithms.interfaces.Sorting;
+package com.algorithms.interfaces;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,6 +6,22 @@ import org.junit.jupiter.api.Test;
 public interface SortingTest<T extends Sorting> {
 
   T createInstance();
+
+  @Test
+  public default void testInputNull() {
+    Integer[] arr = null;
+    Integer[] expected = null;
+
+    Assertions.assertArrayEquals(expected, this.createInstance().sort(arr));
+  }
+
+  @Test
+  public default void testInputZero() {
+    Integer[] arr = new Integer[] {};
+    Integer[] expected = new Integer[] {};
+
+    Assertions.assertArrayEquals(expected, this.createInstance().sort(arr));
+  }
 
   @Test
   public default void testPositiveIntegers() {

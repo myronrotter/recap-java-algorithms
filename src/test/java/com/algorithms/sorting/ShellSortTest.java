@@ -1,6 +1,7 @@
 package com.algorithms.sorting;
 
 import com.algorithms.interfaces.Sorting;
+import com.algorithms.interfaces.SortingTest;
 
 class ShellSortTest implements SortingTest<Sorting> {
 
