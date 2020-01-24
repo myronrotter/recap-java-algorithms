@@ -11,7 +11,9 @@ public class JumpSearch implements Searching {
 
   @Override
   public <T extends Comparable<T>> int search(T[] arr, T key) {
-    if (!SortingUtils.isSorted(arr)) {
+    if (arr == null || arr.length == 0) {
+      return -1;
+    } else if (!SortingUtils.isSorted(arr)) {
       throw new IllegalArgumentException("Input array is not sorted.");
     }
 

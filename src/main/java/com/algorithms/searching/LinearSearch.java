@@ -10,14 +10,16 @@ public class LinearSearch implements Searching {
 
   @Override
   public <T extends Comparable<T>> int search(T[] arr, T key) {
-    int index = -1;
+    if (arr == null || arr.length == 0) {
+      return -1;
+    }
+
     for (int i = 0; i < arr.length; i++) {
       if (CompareUtils.equalTo(arr[i], key)) {
-        index = i;
-        break;
+        return i;
       }
     }
-    return index;
+    return -1;
   }
 
   @Override
