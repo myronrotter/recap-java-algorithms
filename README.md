@@ -9,6 +9,7 @@ Main purpose of this project is to recap and re-implement common-used and well-k
 | insertion    | InsertionSort   | $\Omega(n)$          | $\Theta(n^2)$        | $O(n^2)$        |                                     | Yes                            | Yes    |
 |              | ShellSort[^1]   | $\Omega(n * log(n))$ | $\Theta(n * log(n))$ | $O(n^2)$        |                                     | Yes                            | No     |
 | selection    | SelectionSort   | $\Omega(n^2)$        | $\Theta(n^2)$        | $O(n^2)$        |                                     | Yes                            | No     |
+|              | HeapSort        | $\Omega(n * log(n))$ | $\Theta(n * log(n))$ | $O(n * log(n))$ |                                     | Yes                            | No     |
 | exchange     | BubbleSort      | $\Omega(n)$          | $\Theta(n^2)$        | $O(n^2)$        |                                     | Yes                            | Yes    |
 |              | CombSort[^1]    | $\Omega(n * log(n))$ | $\Theta(n^2/2^p)$    | $O(n^2)$        | $p$ the number of increments        | Yes                            | No     |
 |              | CocktailSort    | $\Omega(n)$          | $\Theta(n^2)$        | $O(n^2)$        |                                     | Yes                            | Yes    |
@@ -24,14 +25,17 @@ Main purpose of this project is to recap and re-implement common-used and well-k
 
 ## Searching
 
-| class               | name                          | best-case   | average-case              | worst-case    |
-| ------------------- | ----------------------------- | ----------- | ------------------------- | ------------- |
-| generic (Searching) | LinearSearch                  | $\Omega(1)$ | $\Theta(n)$               | $O(n)$        |
-|                     | BinarySearch                  | $\Omega(1)$ | $\Theta(log(n))$          | $O(log(n))$   |
-|                     | TernarySearch                 | $\Omega(1)$ | $\Theta(log_3(n))$        | $O(log_3(n))$ |
-|                     | JumpSearch                    | $\Omega(1)$ | $\Theta(\sqrt{n})$        | $O(\sqrt{n})$ |
-| integer (Finding)   | InterpolationSearch           | $\Omega(1)$ | $\Theta(log(log(n)))$[^3] | $O(n)$        |
-|                     | InterpolationSequentialSearch |             |                           |               |
+| class               | name                          | best-case   | average-case              | worst-case    | description                        |
+| ------------------- | ----------------------------- | ----------- | ------------------------- | ------------- | ---------------------------------- |
+| generic (Searching) | LinearSearch                  | $\Omega(1)$ | $\Theta(n)$               | $O(n)$        |                                    |
+|                     | BinarySearch                  | $\Omega(1)$ | $\Theta(log(n))$          | $O(log(n))$   |                                    |
+|                     | TernarySearch                 | $\Omega(1)$ | $\Theta(log_3(n))$        | $O(log_3(n))$ |                                    |
+|                     | JumpSearch                    | $\Omega(1)$ | $\Theta(\sqrt{n})$        | $O(\sqrt{n})$ |                                    |
+|                     | ExponentialSearch             | $\Omega(1)$ | $\Theta(log(n))$          | $O(log(n))$   |                                    |
+|                     | FibonacciSearch               | $\Omega(1)$ | $\Theta(log(n))$          | $O(log(n))$   |                                    |
+| 2D (Searching2D)    | SaddlebackSearch              | $\Omega(1)$ | $\Theta(n+m)$             | $O(n+m)$      | $m$ the maximum of all rows length |
+| integer (Finding)   | InterpolationSearch           | $\Omega(1)$ | $\Theta(log(log(n)))$[^3] | $O(n)$        |                                    |
+|                     | InterpolationSequentialSearch |             |                           |               |                                    |
 
 [^1]: Strictly, it depends on gap sequence/ size.
 [^2]: Denoted is the delay within the network of $O(n * log^2(n))$ comparators.
