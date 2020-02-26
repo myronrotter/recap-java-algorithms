@@ -16,7 +16,7 @@ public interface SortingTest<T extends Sorting> {
   }
 
   @Test
-  public default void testInputZero() {
+  public default void testInputSizeZero() {
     Integer[] arr = new Integer[] {};
     Integer[] expected = new Integer[] {};
 

@@ -22,13 +22,4 @@ class SaddlebackSearchTest implements Searching2DTest<Searching2D> {
       this.createInstance().search(arr, key);
     });
   }
-
-  @Test
-  public void testBla() {
-    String key = "a";
-    String[][] arr = new String[][] { { "aaaa", "aaaaa", "bba" }, { "bbba", "cca", "xyz" }, { "yy", "zz" } };
-    int[] expected = new int[] { -1, -1 };
-
-    Assertions.assertArrayEquals(expected, this.createInstance().search(arr, key));
-  }
 }
